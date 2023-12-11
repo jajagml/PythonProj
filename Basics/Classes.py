@@ -7,7 +7,7 @@ class Chocolate:
     self.type = type
     self._size = size
     self._weight = weight
-    self._price = weight * Chocolate.PRICE_MULTIPLIER
+    self._price = self.calculate_price()
 
   @property
   def weight(self):
@@ -17,6 +17,7 @@ class Chocolate:
   def weight(self, new_weight):
     if isinstance(new_weight, float) and new_weight > 0:
       self._weight = new_weight
+      self._price = self.calculate_price()
     else:
       print("Please enter a valid weight")
   
@@ -37,7 +38,7 @@ class Chocolate:
       print("Please enter a valid size")
   
   def get_number_of_servings(self):
-    match self._size:
+    match self.size:
       case "S":
         return 1
       case "M":
@@ -46,6 +47,20 @@ class Chocolate:
         return 4
       case _:
         return 0
+      
+  def calculate_price(self):
+    return self.weight * Chocolate.PRICE_MULTIPLIER
   
   
       
+new_choco1 = Chocolate("Mars", "Milk Chocolate", "L", 200)
+
+print("This chocolate can serve " + str(new_choco1.get_number_of_servings()) + " people")
+
+print("Newchoco1 old price is " + str(new_choco1.price))
+
+new_choco1.weight = 500.0
+print("Newchoco1 new price is " + str(new_choco1.price))
+
+new_choco2 = Chocolate("Mars", "Milk Chocolate", "S")
+print("Newchoco2 weight is " + str(new_choco2.weight))
