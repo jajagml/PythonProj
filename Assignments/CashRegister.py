@@ -102,14 +102,14 @@ a.add_product_in_purchase(donut).add_product_in_purchase(coffee).add_product_in_
 a.display_products_in_purchase()
 
 a.set_item_quantity("Donut", 5)
-print("Before price update: " + str(a.products))
+print(f"Before price update: {a.products}")
 
 a.update_product_price("Donut",60)
-print("After price update: " + str(a.products))
+print(f"After price update: {a.products}")
 
-print("Subtotal: " + str(a.calculate_subtotal()))
-print("Taxes: " + str(a.calculate_taxes()))
-print("Total: " + str(a.calculate_total_with_taxes()))
+print(f"Subtotal: {a.calculate_subtotal()}")
+print(f"Taxes: {a.calculate_taxes()}")
+print(f"Total: {a.calculate_total_with_taxes()}")
 
 print(a.cashier_name)
 a.clear_purchase()
