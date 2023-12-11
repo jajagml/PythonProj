@@ -5,9 +5,9 @@ class Chocolate:
   def __init__(self, name, type, size, weight=100):
     self.name = name
     self.type = type
-    self._size = _size
+    self._size = size
     self._weight = weight
-    self._price = weight * price_multiplier
+    self._price = weight * Chocolate.PRICE_MULTIPLIER
 
   @property
   def weight(self):
@@ -18,7 +18,7 @@ class Chocolate:
     if isinstance(new_weight, float) and new_weight > 0:
       self._weight = new_weight
     else:
-      print("Please enter a valid weight)
+      print("Please enter a valid weight")
   
   @property
   def price(self):
