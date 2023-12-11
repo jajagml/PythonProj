@@ -29,7 +29,7 @@ class Chocolate:
     return self._size
   
   @size.setter
-  def size(self, new_size)
+  def size(self, new_size):
     size_list = ["S", "M", "L"]
     if new_size in size_list:
       self._size = new_size
