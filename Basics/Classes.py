@@ -36,7 +36,7 @@ class Chocolate:
     else:
       print("Please enter a valid size")
   
-  def get_number_of_servings():
+  def get_number_of_servings(self):
     match self._size:
       case "S":
         return 1
